@@ -1,20 +1,21 @@
 "use client";
 
-import * as z from "zod";
-import axios from "axios";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
+
+import axios from "axios";
+import * as z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Course } from "@prisma/client";
+import { cn } from "@/lib/utils";
+
+import { Pencil } from "lucide-react";
+import toast from "react-hot-toast";
 
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-
-import { Button } from "@/components/ui/button";
-import { Pencil } from "lucide-react";
-import { useState } from "react";
-import toast from "react-hot-toast";
-import { useRouter } from "next/navigation";
-import { cn } from "@/lib/utils";
 import { Textarea } from "@/components/ui/textarea";
-import { Course } from "@prisma/client";
+import { Button } from "@/components/ui/button";
 
 interface DescriptionFormProps {
   initialData: Course;

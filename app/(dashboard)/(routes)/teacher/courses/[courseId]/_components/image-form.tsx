@@ -4,11 +4,12 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-import * as z from "zod";
 import axios from "axios";
+import * as z from "zod";
 import { Course } from "@prisma/client";
-import { ImageIcon, Pencil, PlusCircle } from "lucide-react";
+
 import toast from "react-hot-toast";
+import { ImageIcon, Pencil, PlusCircle } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import FileUpload from "@/components/upload-thing";
@@ -31,7 +32,6 @@ function ImageForm({ initialData, courseId }: ImageFormProps) {
   const router = useRouter();
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-
       await axios.patch(`/api/courses/${courseId}`, values);
       toast.success("Course updated successfully");
       toggleEdit();
@@ -86,9 +86,9 @@ function ImageForm({ initialData, courseId }: ImageFormProps) {
               }
             }}
           />
-          <div className="text-xs text-muted-foreground mt-4">
+          <span className="text-xs text-muted-foreground mt-4">
             16:9 aspect ratio recommended
-          </div>
+          </span>
         </div>
       )}
     </div>

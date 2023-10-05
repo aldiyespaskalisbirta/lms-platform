@@ -1,22 +1,23 @@
 "use client";
 
-import * as z from "zod";
-import axios from "axios";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-
-import { Button } from "@/components/ui/button";
-import { Pencil } from "lucide-react";
-import { useState } from "react";
-import toast from "react-hot-toast";
-import { useRouter } from "next/navigation";
-import { cn } from "@/lib/utils";
-import { Textarea } from "@/components/ui/textarea";
+import axios from "axios";
+import * as z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Course } from "@prisma/client";
-import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
+
 import { formatPrice } from "@/lib/format";
+
+import toast from "react-hot-toast";
+import { Pencil } from "lucide-react";
+
+import { useRouter } from "next/navigation";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 
 interface PriceFormProps {
   initialData: Course;

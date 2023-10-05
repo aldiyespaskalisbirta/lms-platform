@@ -1,27 +1,20 @@
 "use client";
 
-import * as z from "zod";
-import axios from "axios";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage,
-} from "@/components/ui/form";
-
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Pencil } from "lucide-react";
 import { useState } from "react";
-import toast from "react-hot-toast";
+import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
-import { cn } from "@/lib/utils";
-import { Textarea } from "@/components/ui/textarea";
+
+import axios from "axios";
+import * as z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Course } from "@prisma/client";
+import { cn } from "@/lib/utils";
+
+import toast from "react-hot-toast";
+import { Pencil } from "lucide-react";
+
+import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
+import { Button } from "@/components/ui/button";
 import { Combobox } from "@/components/ui/combobox";
 
 interface CategoryFormProps {
