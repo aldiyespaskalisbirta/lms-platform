@@ -16,8 +16,6 @@ import toast from "react-hot-toast";
 import { Form, FormControl, FormDescription, FormField, FormItem } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import Editor from "@/components/editor";
-import Preview from "@/components/preview";
 
 interface ChapterAccessFormProps {
   initialData: Chapter;
