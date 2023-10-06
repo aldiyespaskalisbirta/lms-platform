@@ -5,6 +5,7 @@ datasource db {
 
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
 }
 
 model Course {
@@ -22,6 +23,8 @@ model Course {
   attachments         Attachment[]    
   createdAt           DateTime          @default(now())
   updatedAt           DateTime          @updatedAt
+
+  @@fulltext([title])
 }
 
 model Category {
