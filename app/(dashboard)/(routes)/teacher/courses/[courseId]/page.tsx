@@ -74,7 +74,10 @@ async function CourseIdPage({ params }: { params: { courseId: string } }) {
   return (
     <>
       {!course.isPublished && (
-        <Banner label="This course is unpublished. It will not be visible to the students." />
+        <Banner
+          label="This course is unpublished. It will not be visible to the students."
+          variant="warning"
+        />
       )}
       <div className="p-6">
         <div className="flex items-center justify-between">
@@ -84,7 +87,6 @@ async function CourseIdPage({ params }: { params: { courseId: string } }) {
               Complete all fields {compoletionText}
             </span>
           </div>
-          {/* //TODO: Add actions */}
           <CourseActions
             disabled={!isComplete}
             courseId={params.courseId}
